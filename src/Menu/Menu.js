@@ -8,7 +8,9 @@ const MenuStyled = styled.div`
   /* height: 1000px; */
   margin: 0px 400px 50px 20px;
   h1 {
-    font-weight: 400;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 600;
+    font-style: italic;
     color: ${ESBlue};
   }
 `;

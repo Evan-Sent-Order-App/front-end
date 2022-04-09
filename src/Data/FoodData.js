@@ -12,17 +12,17 @@ export const foodItems = [
     {
         name: 'Meatball Sub',
         img: '/Assets/pexels-pizza.jpg',
-        section: 'Sandwich'
+        section: 'Sandwichs'
     },
     {
         name: 'Vegan Club',
         img: '/Assets/pexels-pizza.jpg',
-        section: 'Sandwich'
+        section: 'Sandwichs'
     },
     {
         name: 'Tuna Melt',
         img: '/Assets/pexels-pizza.jpg',
-        section: 'Sandwich'
+        section: 'Sandwichs'
     },
     {
         name: 'Fries',
