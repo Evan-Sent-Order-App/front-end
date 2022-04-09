@@ -12,7 +12,7 @@ const OrderStyled = styled.div`
   top: 80px;
   width: 340px;
   background-color: white;
-  height: calc(100% - 48px);
+  height: calc(100% - 80px);
   z-index: 1;
   box-shadow: 4px 0px 5px 4px grey;
   display: flex;
@@ -27,16 +27,14 @@ const OrderContent = styled(DialogContent)`
 export function Order({ orders }) {
   return (
     <OrderStyled>
-      )
-      {orders?.length === 0 ? 
+      {orders.length === 0 ? (
         <OrderContent>Your Order is Empty</OrderContent>
-       : 
-        <OrderContent> Found {orders?.length} orders </OrderContent>
-      }
-      (
+      ) : (
+        <OrderContent> Found {orders.length} orders </OrderContent>
+      )}
       <DialogFooter>
         <ConfirmButton>Checkout</ConfirmButton>
       </DialogFooter>
     </OrderStyled>
-  );
+  )
 }

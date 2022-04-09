@@ -73,6 +73,7 @@ export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
   if (!openFood) return null;
 
   const order = {
+    ...openFood,
     name: openFood.name,
   };
 
