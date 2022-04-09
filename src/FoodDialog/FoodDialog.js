@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FoodLabel } from "../Menu/FoodGrid";
+// import { FoodLabel } from "../Menu/FoodGrid";
 import { Title } from "../Styles/title";
 import { ESBlue } from "../Styles/colors";
 
@@ -8,7 +8,7 @@ const Dialog = styled.div`
   width: 500px;
   background-color: white;
   position: fixed;
-  top: 95px;
+  top: 120px;
   z-index: 5;
   max-height: calc(100% - 100px);
   left: calc(50% - 250px);
@@ -66,11 +66,21 @@ const DialogBannerName = styled(Title)`
   padding-left: 3%;
 `;
 
-export function FoodDialog({ openFood, setOpenFood }) {
+export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
   function close() {
     setOpenFood();
   }
   if (!openFood) return null;
+
+  const order = {
+    name: openFood.name,
+  };
+
+  function addToOrder() {
+    setOrders([...orders, order]);
+    close();
+  }
+
   return (
     <>
       <DialogShadow onClick={close} />
@@ -80,7 +90,7 @@ export function FoodDialog({ openFood, setOpenFood }) {
         </DialogBanner>
         <DialogContent></DialogContent>
         <DialogFooter>
-          <ConfirmButton>Add To Order</ConfirmButton>
+          <ConfirmButton onClick={addToOrder}>Add To Order</ConfirmButton>
         </DialogFooter>
       </Dialog>
     </>
