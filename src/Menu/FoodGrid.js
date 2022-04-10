@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Title } from "../Styles/title";
 import { ESBlue } from "../Styles/colors";
 
-
 export const FoodGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
