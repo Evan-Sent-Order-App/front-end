@@ -18,7 +18,7 @@ const IncrementContainer = styled(Title)`
 
 const IncrementButton = styled.div`
   width: 23px;
-  color: ${ESLightBlue};
+  color: ${ESBlue};
   font-size: 20px;
   text-align: center;
   cursor: pointer;
