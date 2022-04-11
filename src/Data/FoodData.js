@@ -11,12 +11,15 @@ export const foodItems = [
     img: "/Assets/Fruit_medley.png",
     section: "Brunch",
     quantityPerOrder: "Half-Pan",
+    description: "seasonal, fresh-cut, veggies",
+    allergies: "TBD based on seasonality",
     price: 20,
   },
   {
     name: "Bacon Wrapped Asparagus",
     img: "/Assets/AspargusBacon.png",
     quantityPerOrder: "12",
+    description: "pork bacon wrapped around aspargus - served by the dozen.  ",
     section: "Bites",
     price: 16,
   },
@@ -25,6 +28,8 @@ export const foodItems = [
     img: "/Assets/Deviled_Eggs.png",
     quantityPerOrder: "12",
     section: "Bites",
+    description: "bacon, eggs, chives and paprika - served by the dozen",
+    allergies: "allium, dairy",
     price: 14,
   },
   {
@@ -33,6 +38,8 @@ export const foodItems = [
     img: "/Assets/Mini_Quiche.png",
     quantityPerOrder: "48",
     section: "Brunch",
+    description: "four dozen mini quiches with asparagus, fresh herbs & cheese",
+    allergies: "allium, dairy",
     price: 28,
   },
   {
@@ -40,6 +47,8 @@ export const foodItems = [
     style: "Bacon, Spinach & Leek",
     img: "/Assets/Mini_Quiche.png",
     section: "Brunch",
+    description: "four dozen mini quiches with bacon, spinach & leek",
+    allergies: "allium, dairy",
     quantityPerOrder: "48",
     price: 28,
   },
@@ -49,6 +58,8 @@ export const foodItems = [
     img: "/Assets/Mini_Quiche.png",
     section: "Brunch",
     quantityPerOrder: "48",
+    description: "four dozen mini quiches with broccoli & cheddar",
+    allergies: "allium, dairy",
     price: 28,
   },
   {
@@ -57,6 +68,9 @@ export const foodItems = [
     img: "/Assets/Mini_Quiche.png",
     section: "Brunch",
     quantityPerOrder: "48",
+    description:
+      "four dozen mini quiches with ham, cheese1, cheese2, cheese3, cheese4",
+    allergies: "allium, dairy",
     price: 28,
   },
   {
@@ -64,6 +78,8 @@ export const foodItems = [
     img: "/Assets/Pasta_Salad.png",
     section: "Bites",
     quantityPerOrder: "Half-Pan",
+    description: "description",
+    allergies: "allium, nightshade, gluten, dairy",
     price: 35,
   },
   {
@@ -71,6 +87,8 @@ export const foodItems = [
     img: "/Assets/Pasta_Salad.png",
     section: "Bites",
     quantityPerOrder: "Half-Pan",
+    description: "half-pan of description",
+    allergies: "allium, nightshade, gluten, dairy",
     price: 35,
   },
   {
@@ -78,6 +96,8 @@ export const foodItems = [
     img: "/Assets/Waffles.png",
     section: "Brunch",
     quantityPerOrder: "20",
+    description: "description",
+    allergies: "allium, nightshade, gluten, dairy",
     price: 28,
   },
   {
@@ -85,6 +105,8 @@ export const foodItems = [
     img: "/Assets/Heaven_One.png",
     section: "Treats",
     quantityPerOrder: "Small-Loaf",
+    description: "description",
+    allergies: "nuts, dairy",
     price: 7,
   },
   {
@@ -92,6 +114,8 @@ export const foodItems = [
     img: "/Assets/Heaven_One.png",
     section: "Treats",
     quantityPerOrder: "Small-Loaf",
+    description: "description",
+    allergies: "nuts, dairy",
     price: 7,
   },
   {
@@ -99,6 +123,8 @@ export const foodItems = [
     img: "/Assets/Heaven_One.png",
     section: "Treats",
     quantityPerOrder: "Small-Loaf",
+    description: "description",
+    allergies: "nuts, dairy",
     price: 7,
   },
 ];

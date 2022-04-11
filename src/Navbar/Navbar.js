@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ESLightYellow } from "../Styles/colors";
+import { ESBlue, ESLightYellow } from "../Styles/colors";
 
 const NavbarStyled = styled.div`
   background-color: ${ESLightYellow};
@@ -9,6 +9,7 @@ const NavbarStyled = styled.div`
   position: fixed;
   width: 100%;
   z-index: 10;
+  border-bottom: 6px solid ${ESBlue};
 `;
 const Logo = styled.div`
   height: 75px;

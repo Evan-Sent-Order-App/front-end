@@ -6,6 +6,8 @@ import {
   ConfirmButton,
 } from "../FoodDialog/FoodDialog";
 import { formatPrice } from "../Data/FoodData";
+import { ESBlue, ESYellow } from "../Styles/colors";
+import { getPrice } from "../FoodDialog/FoodDialog";
 
 const OrderStyled = styled.div`
   position: fixed;
@@ -23,11 +25,15 @@ const OrderStyled = styled.div`
 const OrderContent = styled(DialogContent)`
   padding: 20px;
   height: 100%;
+  color: ${ESBlue};
+  font-family: "Exo 2", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 `;
 
 const OrderContainer = styled.div`
   padding: 10px 0px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid ${ESYellow};
 `;
 
 const OrderItem = styled.div`
@@ -35,6 +41,7 @@ const OrderItem = styled.div`
   display: grid;
   grid-template-columns: 20px 150px 20px 60px;
   justify-content: space-between;
+  font-weight: 400;
 `;
 
 export function Order({ orders }) {
@@ -49,10 +56,10 @@ export function Order({ orders }) {
           {orders.map((order) => (
             <OrderContainer>
               <OrderItem>
-                <div>1</div>
+                <div>{order.quantity}</div>
                 <div>{order.name}</div>
                 <div />
-                <div>{formatPrice(order.price)}</div>
+                <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
             </OrderContainer>
           ))}
