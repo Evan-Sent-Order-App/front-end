@@ -6,6 +6,8 @@ import { ESBlue, ESDarkBlue, ESLightBlue } from "../Styles/colors";
 import { formatPrice } from "../Data/FoodData";
 import { QuantityInput } from "./QuantityInput";
 import { useQuantity } from "../Hooks/useQuantity";
+import { useChoice } from "../Hooks/useChoice";
+import { Choices } from "./Choices";
 
 const Dialog = styled.div`
   width: 500px;
@@ -91,6 +93,8 @@ export function getPrice(order) {
 
 function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const quantity = useQuantity(openFood && openFood.quantity);
+  const choiceRadio = useChoice(openFood.choice);
+
   function close() {
     setOpenFood();
   }
@@ -98,6 +102,7 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const order = {
     ...openFood,
     quantity: quantity.value,
+    choice: choiceRadio.value,
   };
 
   function addToOrder() {
@@ -118,6 +123,7 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
             <Desc>{openFood.description}</Desc>
             <Desc>allergans: {openFood.allergies}</Desc>
           </DescriptionContainer>
+          <Choices {...choiceRadio} />
         </DialogContent>
         <DialogFooter>
           <ConfirmButton onClick={addToOrder}>

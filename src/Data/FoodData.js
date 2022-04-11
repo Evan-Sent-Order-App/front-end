@@ -13,6 +13,7 @@ export const foodItems = [
     quantityPerOrder: "Half-Pan",
     description: "seasonal, fresh-cut, veggies",
     allergies: "TBD based on seasonality",
+    choices: ["half-pan", "full-pan"],
     price: 20,
   },
   {
@@ -80,6 +81,7 @@ export const foodItems = [
     quantityPerOrder: "Half-Pan",
     description: "description",
     allergies: "allium, nightshade, gluten, dairy",
+    choices: ["half-pan", "full-pan"],
     price: 35,
   },
   {
@@ -89,6 +91,7 @@ export const foodItems = [
     quantityPerOrder: "Half-Pan",
     description: "half-pan of description",
     allergies: "allium, nightshade, gluten, dairy",
+    choices: ["half-pan", "full-pan"],
     price: 35,
   },
   {
@@ -126,6 +129,15 @@ export const foodItems = [
     description: "description",
     allergies: "nuts, dairy",
     price: 7,
+  },
+  {
+    name: "Pizza Bites",
+    img: "/Assets/Heaven_One.png",
+    section: "Bites",
+    quantityPerOrder: "12",
+    description: "description",
+    allergies: "gluten, dairy",
+    price: 16,
   },
 ];
 
