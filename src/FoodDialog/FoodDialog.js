@@ -11,12 +11,13 @@ const Dialog = styled.div`
   width: 500px;
   background-color: white;
   position: fixed;
-  top: 120px;
+  top: 90px;
   z-index: 5;
   max-height: calc(100% - 100px);
   left: calc(50% - 250px);
   display: flex;
   flex-direction: column;
+  transition: 0.3s ease-in;
 `;
 
 export const DialogContent = styled.div`
