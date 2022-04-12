@@ -123,10 +123,15 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
             <Desc>{openFood.description}</Desc>
             <Desc>allergans: {openFood.allergies}</Desc>
           </DescriptionContainer>
-          <Choices {...choiceRadio} />
+          {openFood.choices && (
+            <Choices openFood={openFood} choiceRadio={choiceRadio} />
+          )}{" "}
         </DialogContent>
         <DialogFooter>
-          <ConfirmButton onClick={addToOrder}>
+          <ConfirmButton
+            onClick={addToOrder}
+            disabled={openFood.choices && !choiceRadio.value}
+          >
             Add To Order: {formatPrice(getPrice(order))}
           </ConfirmButton>
         </DialogFooter>

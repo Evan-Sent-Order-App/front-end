@@ -12,7 +12,7 @@ import { useTitle } from "./Hooks/useTitle";
 function App() {
   const openFood = useOpenFood();
   const orders = useOrders();
-  useTitle({ ...openFood, orders });
+  useTitle({ ...openFood, ...orders });
 
   return (
     <>
