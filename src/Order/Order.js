@@ -6,7 +6,7 @@ import {
   ConfirmButton,
 } from "../FoodDialog/FoodDialog";
 import { formatPrice } from "../Data/FoodData";
-import { ESBlue, ESYellow } from "../Styles/colors";
+import { ESBlue, ESDarkBlue, ESLightBlue, ESYellow } from "../Styles/colors";
 import { getPrice } from "../FoodDialog/FoodDialog";
 
 const OrderStyled = styled.div`
@@ -34,6 +34,19 @@ const OrderContent = styled(DialogContent)`
 const OrderContainer = styled.div`
   padding: 10px 0px;
   border-bottom: 1px solid ${ESYellow};
+  ${({ editable }) =>
+    editable
+      ? `
+  :hover {
+    background-color: ${ESLightBlue};
+    color: ${ESBlue};
+    font-style: italic;
+    cursor: pointer;
+  }
+`
+      : `
+  pointer-events:none;
+`}
 `;
 
 const OrderItem = styled.div`
@@ -44,13 +57,24 @@ const OrderItem = styled.div`
   font-weight: 400;
 `;
 
-export function Order({ orders }) {
+const DetailItem = styled.div`
+  color: gray;
+  font-size: 10px;
+`;
+
+export function Order({ orders, setOrders, setOpenFood }) {
   const subtotal = orders.reduce((total, order) => {
     return total + getPrice(order);
   }, 0);
 
   const tax = subtotal * 0.065;
   const total = subtotal + tax;
+
+  const deleteItem = (index) => {
+    const newOrders = [...orders];
+    newOrders.splice(index, 1);
+    setOrders(newOrders);
+  };
 
   return (
     <OrderStyled>
@@ -60,14 +84,27 @@ export function Order({ orders }) {
         <OrderContent>
           <OrderContainer> Your Order: </OrderContainer>
 
-          {orders.map((order) => (
-            <OrderContainer>
-              <OrderItem>
+          {orders.map((order, index) => (
+            <OrderContainer editable>
+              <OrderItem
+                onClick={() => {
+                  setOpenFood({ ...order, index });
+                }}
+              >
                 <div>{order.quantity}</div>
                 <div>{order.name}</div>
-                <div />
+                <div
+                  style={{ cursor: "pointer", color: "red" }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    deleteItem(index);
+                  }}
+                >
+                  X
+                </div>
                 <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
+              {order.choice && <DetailItem>{order.choice}</DetailItem>}
             </OrderContainer>
           ))}
           <OrderContainer>
