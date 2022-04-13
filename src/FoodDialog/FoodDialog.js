@@ -2,12 +2,19 @@ import React from "react";
 import styled from "styled-components";
 // import { FoodLabel } from "../Menu/FoodGrid";
 import { Title } from "../Styles/title";
-import { ESBlue, ESDarkBlue, ESLightBlue } from "../Styles/colors";
+import {
+  ESBlue,
+  ESDarkBlue,
+  ESLightBlue,
+  ESLightYellow,
+} from "../Styles/colors";
 import { formatPrice } from "../Data/FoodData";
 import { QuantityInput } from "./QuantityInput";
 import { useQuantity } from "../Hooks/useQuantity";
 import { useChoice } from "../Hooks/useChoice";
 import { Choices } from "./Choices";
+import { Toppings } from "./Toppings";
+import { useToppings } from "../Hooks/useToppings";
 
 const Dialog = styled.div`
   width: 500px;
@@ -39,6 +46,15 @@ const DescriptionContainer = styled.div`
 const Desc = styled.div`
   font-size: 16px;
   color: ${ESDarkBlue};
+`;
+
+const ToppingsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  margin-top: 10px;
+  background-color: ${ESLightYellow};
+  margin-bottom: 15px;
 `;
 
 export const DialogFooter = styled.div`
@@ -100,6 +116,7 @@ export function getPrice(order) {
 
 function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
   const quantity = useQuantity(openFood && openFood.quantity);
+  const toppings = useToppings(openFood.toppings)
   const choiceRadio = useChoice(openFood.choice);
   const isEditing = openFood.index > -1;
 
@@ -107,9 +124,14 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     setOpenFood();
   }
 
+  function hasToppings(food) {
+    return food.name === "Pizza Bites";
+  }
+
   const order = {
     ...openFood,
     quantity: quantity.value,
+    toppings: toppings.toppings,
     choice: choiceRadio.value,
   };
 
@@ -135,9 +157,16 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
         <DialogContent>
           <QuantityInput quantity={quantity} />
           <DescriptionContainer>
-            <Desc>{openFood.description}</Desc>
+            <Desc>description: {openFood.description}</Desc>
             <Desc>allergans: {openFood.allergies}</Desc>
           </DescriptionContainer>
+
+          {hasToppings(openFood) && (
+            <ToppingsContainer>
+              What combo?
+              <Toppings {...toppings}/>
+            </ToppingsContainer>
+          )}
           {openFood.choices && (
             <Choices openFood={openFood} choiceRadio={choiceRadio} />
           )}

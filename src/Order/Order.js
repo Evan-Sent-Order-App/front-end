@@ -104,6 +104,12 @@ export function Order({ orders, setOrders, setOpenFood }) {
                 </div>
                 <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
+              <DetailItem>
+                {order.toppings
+                  .filter((t) => t.checked)
+                  .map((topping) => topping.name)
+                  .join(", ")}
+              </DetailItem>
               {order.choice && <DetailItem>{order.choice}</DetailItem>}
             </OrderContainer>
           ))}
