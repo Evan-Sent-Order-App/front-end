@@ -7,6 +7,26 @@ export function formatPrice(price) {
 
 export const foodItems = [
   {
+    name: "Veggie Pasta Salad",
+    img: "/Assets/Pasta_Salad.png",
+    section: "Bites",
+    quantityPerOrder: "Half-Pan",
+    description: "description",
+    allergies: "allium, nightshade, gluten, dairy",
+    choices: ["half-pan", "full-pan"],
+    price: 35,
+  },
+  {
+    name: "Salami Pasta Salad",
+    img: "/Assets/Pasta_Salad.png",
+    section: "Bites",
+    quantityPerOrder: "Half-Pan",
+    description: "half-pan of description",
+    allergies: "allium, nightshade, gluten, dairy",
+    choices: ["half-pan", "full-pan"],
+    price: 35,
+  },
+  {
     name: "Fruit Medley",
     img: "/Assets/Fruit_medley.png",
     section: "Brunch",
@@ -74,26 +94,7 @@ export const foodItems = [
     allergies: "allium, dairy",
     price: 28,
   },
-  {
-    name: "Veggie Pasta Salad",
-    img: "/Assets/Pasta_Salad.png",
-    section: "Bites",
-    quantityPerOrder: "Half-Pan",
-    description: "description",
-    allergies: "allium, nightshade, gluten, dairy",
-    choices: ["half-pan", "full-pan"],
-    price: 35,
-  },
-  {
-    name: "Salami Pasta Salad",
-    img: "/Assets/Pasta_Salad.png",
-    section: "Bites",
-    quantityPerOrder: "Half-Pan",
-    description: "half-pan of description",
-    allergies: "allium, nightshade, gluten, dairy",
-    choices: ["half-pan", "full-pan"],
-    price: 35,
-  },
+
   {
     name: "Fried Chicken & Savory Waffles",
     img: "/Assets/Waffles.png",
