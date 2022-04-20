@@ -31,10 +31,12 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!-- <script src="index.js"></script> -->
-    <script type="module">
+    <!-- <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-analytics.js";
+      import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js";
+
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -54,6 +56,37 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
-    </script>
+      const auth = getAuth(app);
+    </script> -->
+
+    <!-- <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"
+    ></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBrfZdOyV91NvTAqBFJ6TmzpxAvKxdrFTg",
+        authDomain: "es-order-app.firebaseapp.com",
+        databaseURL: "https://es-order-app-default-rtdb.firebaseio.com",
+        projectId: "es-order-app",
+        storageBucket: "es-order-app.appspot.com",
+        messagingSenderId: "290268406657",
+        appId: "1:290268406657:web:4fd742aea290368e3afe80",
+        measurementId: "G-E6L1LX1TPP",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script> -->
   </body>
 </html>
